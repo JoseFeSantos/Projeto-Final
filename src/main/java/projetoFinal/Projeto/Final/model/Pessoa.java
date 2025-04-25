@@ -35,6 +35,9 @@ public abstract class Pessoa {
     @Column(name = "telefone")
     private String telefone;
 
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "cpf")
     private long cpf;
 
