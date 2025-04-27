@@ -180,3 +180,89 @@ INSERT INTO categoriaservico (nome) VALUES ('Consultoria');
 
 -- Categoria 10: Serviços de Entregas
 INSERT INTO categoriaservico (nome) VALUES ('Entregas');
+
+--SERVIÇO
+-- Serviços de Informática (Categoria 1)
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Formatação e Instalação de Sistema Operacional',
+    'Formatação completa com instalação do Windows e drivers',
+    120.00, 1);
+
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Limpeza Interna de Notebook',
+    'Limpeza completa de poeira e troca de pasta térmica',
+    80.00, 1);
+
+-- Serviços Elétricos (Categoria 2)
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Instalação de Padrão de Entrada',
+    'Instalação completa do padrão CELG/ANEEL',
+    350.00, 2);
+
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Troca de Tomadas e Interruptores',
+    'Substituição de dispositivos elétricos residenciais',
+    25.00, 2);
+
+-- Serviços de Construção (Categoria 3)
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Assentamento de Piso Cerâmico',
+    'Instalação profissional por m²',
+    45.00, 3);
+
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Pintura Residencial',
+    'Preparação de superfície e aplicação de tinta',
+    15.00, 3);
+
+-- Serviços Automotivos (Categoria 4)
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Troca de Óleo e Filtros',
+    'Troca completa com óleo semissintético',
+    150.00, 4);
+
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Alinhamento e Balanceamento',
+    'Alinhamento 3D + balanceamento completo',
+    120.00, 4);
+
+-- Serviços de Beleza (Categoria 5)
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Corte e Escova',
+    'Corte profissional com escova modeladora',
+    60.00, 5);
+
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Coloração Completa',
+    'Tonalização com produtos profissionais',
+    90.00, 5);
+
+-- Serviços de Limpeza (Categoria 6)
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Limpeza Pós-Obra',
+    'Remoção completa de resíduos de construção',
+    200.00, 6);
+
+-- Serviços de Saúde (Categoria 7)
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Sessão de Fisioterapia',
+    'Atendimento domiciliar com equipamentos',
+    100.00, 7);
+
+-- Serviços de Educação (Categoria 8)
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Aula Particular de Matemática',
+    'Aula individual para ensino médio',
+    50.00, 8);
+
+-- Serviços de Consultoria (Categoria 9)
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Consultoria para MEI',
+    'Abertura e regularização de MEI',
+    250.00, 9);
+
+-- Serviços de Entregas (Categoria 10)
+INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
+    'Entrega Expressa',
+    'Entrega rápida na mesma cidade',
+    15.00, 10);

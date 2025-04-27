@@ -1,147 +1,114 @@
-package projetoFinal.Projeto.Final.model;
-
-import jakarta.persistence.*;
-import projetoFinal.Projeto.Final.enus.MeioDePagamento;
-import projetoFinal.Projeto.Final.enus.StatusDePagamento;
-
-import java.time.LocalDate;
-import java.util.List;
-
-@Entity
-@Table(name = "orcamento")
-public class Orcamento {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private long id;
-
-    @ManyToOne
-    @JoinColumn(name = "cidade_id")
-    private Cidade cidade;
-
-    @ManyToOne
-    @JoinColumn(name = "material_id")
-    private Material material;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "orcamento_id")
-    private List<Servico> servicos;
-
-    @Column(name = "valortotal")
-    private double valorTotal;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "meiodepagamento")
-    private MeioDePagamento meioDePagamento;
-
-    @Column(name = "datalimite")
-    private LocalDate dataLimite;
-
-    @Column(name = "observacao", length = 2000)
-    private String observacao;
-
+//package projetoFinal.Projeto.Final.model;
+//
+//import jakarta.persistence.*;
+//import projetoFinal.Projeto.Final.enus.MeioDePagamento;
+//import projetoFinal.Projeto.Final.enus.StatusOrcamento;
+//import java.time.LocalDate;
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//@Entity
+//@Table(name = "orcamento")
+//public class Orcamento {
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
+//
 //    @ManyToOne
-//    @JoinColumn(name = "pessoa_id")
-//    private Pessoa pessoa;
-
-    @Enumerated(EnumType.STRING)
-    @JoinColumn(name = "statusdepagamento")
-    private StatusDePagamento statusDePagamento;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Cidade getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
-    }
-
-    public Material getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(Material material) {
-        this.material = material;
-    }
-
-    public List<Servico> getServicos() {
-        return servicos;
-    }
-
-    public void setServicos(List<Servico> servicos) {
-        this.servicos = servicos;
-    }
-
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
-    public MeioDePagamento getMeioDePagamento() {
-        return meioDePagamento;
-    }
-
-    public void setMeioDePagamento(MeioDePagamento meioDePagamento) {
-        this.meioDePagamento = meioDePagamento;
-    }
-
-    public LocalDate getDataLimite() {
-        return dataLimite;
-    }
-
-    public void setDataLimite(LocalDate dataLimite) {
-        this.dataLimite = dataLimite;
-    }
-
-    public String getObservacao() {
-        return observacao;
-    }
-
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
-    }
-
-//    public Pessoa getPessoa() {
-//        return pessoa;
+//    @JoinColumn(name = "cliente_id", nullable = false)
+//    private Cliente cliente;
+//
+//    @OneToMany(mappedBy = "orcamento", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<ItemOrcamento> itens = new ArrayList<>();
+//
+//    @Enumerated(EnumType.STRING)
+//    @Column(name = "meio_pagamento")
+//    private MeioDePagamento meioDePagamento;
+//
+//    @Column(name = "data_validade")
+//    private LocalDate dataValidade;
+//
+//    @Column(length = 500)
+//    private String observacoes;
+//
+//    @Enumerated(EnumType.STRING)
+//    private StatusOrcamento status;
+//
+//    // Método que calcula o valor total dinamicamente
+//    @Transient
+//    public Double getValorTotal() {
+//        if (itens == null || itens.isEmpty()) {
+//            return 0.0;
+//        }
+//        return itens.stream()
+//                .mapToDouble(item -> item.getServico().getValor() * item.getQuantidade())
+//                .sum();
 //    }
 //
-//    public void setPessoa(Pessoa pessoa) {
-//        this.pessoa = pessoa;
+//    // Método conveniente para adicionar itens
+//    public void adicionarItem(Servico servico, int quantidade) {
+//        ItemOrcamento item = new ItemOrcamento();
+//        item.setServico(servico);
+//        item.setQuantidade(quantidade);
+//        item.setOrcamento(this);
+//        itens.add(item);
 //    }
-
-    public StatusDePagamento getStatusDePagamento() {
-        return statusDePagamento;
-    }
-
-    public void setStatusDePagamento(StatusDePagamento statusDePagamento) {
-        this.statusDePagamento = statusDePagamento;
-    }
-
-    @Override
-    public String toString() {
-        return "Orcamento{" +
-                "id=" + id +
-                ", cidade=" + cidade +
-                ", material=" + material +
-                ", servicos=" + servicos +
-                ", valorTotal=" + valorTotal +
-                ", meioDePagamento=" + meioDePagamento +
-                ", dataLimite=" + dataLimite +
-                ", observacao='" + observacao + '\'' +
-//                ", pessoa=" + pessoa +
-                ", statusDePagamento=" + statusDePagamento +
-                '}';
-    }
-}
+//
+//    // Getters e Setters
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public Cliente getCliente() {
+//        return cliente;
+//    }
+//
+//    public void setCliente(Cliente cliente) {
+//        this.cliente = cliente;
+//    }
+//
+//    public List<ItemOrcamento> getItens() {
+//        return itens;
+//    }
+//
+//    public void setItens(List<ItemOrcamento> itens) {
+//        this.itens = itens;
+//    }
+//
+//    public MeioDePagamento getMeioDePagamento() {
+//        return meioDePagamento;
+//    }
+//
+//    public void setMeioDePagamento(MeioDePagamento meioDePagamento) {
+//        this.meioDePagamento = meioDePagamento;
+//    }
+//
+//    public LocalDate getDataValidade() {
+//        return dataValidade;
+//    }
+//
+//    public void setDataValidade(LocalDate dataValidade) {
+//        this.dataValidade = dataValidade;
+//    }
+//
+//    public String getObservacoes() {
+//        return observacoes;
+//    }
+//
+//    public void setObservacoes(String observacoes) {
+//        this.observacoes = observacoes;
+//    }
+//
+//    public StatusOrcamento getStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(StatusOrcamento status) {
+//        this.status = status;
+//    }
+//}

@@ -23,6 +23,9 @@ public class Servico {
     @JoinColumn(name = "categoriaservico_id")
     private CategoriaServico categoriaServico;
 
+    public Servico() {
+    }
+
     public Long getId() {
         return id;
     }
