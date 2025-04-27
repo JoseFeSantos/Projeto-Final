@@ -1,6 +1,7 @@
 package projetoFinal.Projeto.Final.model;
 
 import jakarta.persistence.*;
+import projetoFinal.Projeto.Final.enus.TipoConta;
 
 import java.time.LocalDate;
 

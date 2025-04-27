@@ -10,8 +10,8 @@ public class CategoriaServico {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "descricao")
-    private String descricao;
+    @Column(name = "nome")
+    private String nome;
 
     public Long getId() {
         return id;
@@ -21,19 +21,20 @@ public class CategoriaServico {
         this.id = id;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getNome() {
+        return nome;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     @Override
     public String toString() {
         return "CategoriaServico{" +
                 "id=" + id +
-                ", descricao='" + descricao + '\'' +
+                ", nome='" + nome + '\'' +
                 '}';
     }
+
 }

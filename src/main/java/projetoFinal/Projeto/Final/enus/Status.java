@@ -1,4 +1,4 @@
-package projetoFinal.Projeto.Final.model;
+package projetoFinal.Projeto.Final.enus;
 
 public enum Status {
     ACTIVE(1),

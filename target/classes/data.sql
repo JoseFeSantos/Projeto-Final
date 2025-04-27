@@ -109,9 +109,7 @@ VALUES ('Amanda Torres Silva', 'FEMININO', '369.147.258-36', 'amanda.silva@email
 INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
 VALUES ('Roberto Nunes Alves', 'MASCULINO', '951.753.852-96', 'roberto.alves@email.com', '(62) 98765-1597', '1975-01-15', '74010-010', 'Avenida Goiás', 'Setor Central', 9, 9);
 
-
 --COLABORADORES
--- Colaborador 1 (São Paulo/SP - Itaú)
 -- Colaborador 1 (São Paulo/SP - Itaú)
 INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
 VALUES ('Lucas Oliveira', 12345678901, 'lucas.oliveira@empresa.com', '(11) 98765-1234', '1988-07-15', 341, 1234, 567890, 'CORRENTE', '01310-000', 'Avenida Paulista', 'Bela Vista', 25, 25);
@@ -151,3 +149,34 @@ VALUES ('Gabriel Torres', 36914725836, 'gabriel.torres@empresa.com', '(48) 98765
 -- Colaborador 10 (Goiás/GO - Votorantim)
 INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
 VALUES ('Ana Nunes', 95175385296, 'ana.nunes@empresa.com', '(62) 98765-4567', '1975-08-15', 655, 5678, 901234, 'CORRENTE', '74010-010', 'Avenida Goiás', 'Setor Central', 9, 9);
+
+--CATEGORIA DE SERVIÇO
+-- Categoria 1: Serviços de Informática
+INSERT INTO categoriaservico (nome) VALUES ('Informática');
+
+-- Categoria 2: Serviços Elétricos
+INSERT INTO categoriaservico (nome) VALUES ('Serviços Elétricos');
+
+-- Categoria 3: Serviços de Construção
+INSERT INTO categoriaservico (nome) VALUES ('Construção');
+
+-- Categoria 4: Serviços Automotivos
+INSERT INTO categoriaservico (nome) VALUES ('Automotores');
+
+-- Categoria 5: Serviços de Beleza
+INSERT INTO categoriaservico (nome) VALUES ('Beleza');
+
+-- Categoria 6: Serviços de Limpeza
+INSERT INTO categoriaservico (nome) VALUES ('Limpeza');
+
+-- Categoria 7: Serviços de Saúde
+INSERT INTO categoriaservico (nome) VALUES ('Saúde');
+
+-- Categoria 8: Serviços de Educação
+INSERT INTO categoriaservico (nome) VALUES ('Educação');
+
+-- Categoria 9: Serviços de Consultoria
+INSERT INTO categoriaservico (nome) VALUES ('Consultoria');
+
+-- Categoria 10: Serviços de Entregas
+INSERT INTO categoriaservico (nome) VALUES ('Entregas');

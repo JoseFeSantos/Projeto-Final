@@ -1,6 +1,8 @@
 package projetoFinal.Projeto.Final.model;
 
 import jakarta.persistence.*;
+import projetoFinal.Projeto.Final.enus.MeioDePagamento;
+import projetoFinal.Projeto.Final.enus.StatusDePagamento;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,6 +1,8 @@
 package projetoFinal.Projeto.Final.model;
 
 import jakarta.persistence.*;
+import projetoFinal.Projeto.Final.enus.Sexo;
+
 import java.time.LocalDate;
 
 @Entity

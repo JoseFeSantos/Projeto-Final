@@ -1,4 +1,4 @@
-package projetoFinal.Projeto.Final.dto;
+package projetoFinal.Projeto.Final.dtos;
 
 import projetoFinal.Projeto.Final.model.Estado;
 

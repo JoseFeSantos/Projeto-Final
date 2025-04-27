@@ -13,5 +13,4 @@ public interface ClienteRepository extends JpaRepository<Cliente, String> {
 
     @Query("SELECT p FROM Cliente p WHERE LOWER(FUNCTION('unaccent', p.nome)) LIKE LOWER(FUNCTION('unaccent', CONCAT('%', :nome, '%')))")
     List<Cliente> buscarPorNome(@Param("nome") String nome);
-
 }
