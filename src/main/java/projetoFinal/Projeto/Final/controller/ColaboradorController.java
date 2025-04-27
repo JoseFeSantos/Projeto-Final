@@ -1,57 +1,63 @@
-/*
 package projetoFinal.Projeto.Final.controller;
 
-import org.springframework.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import projetoFinal.Projeto.Final.model.Colaborador;
+import projetoFinal.Projeto.Final.repository.ColaboradorRepository;
 import projetoFinal.Projeto.Final.service.ColaboradorService;
+import projetoFinal.Projeto.Final.utils.StringUtils;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("colaborador")
 public class ColaboradorController {
 
-    private final ColaboradorService colaboradorService;
-
-    public ColaboradorController(ColaboradorService colaboradorService) {
+    public ColaboradorController(ColaboradorService colaboradorService, ColaboradorRepository colaboradorRepository) {
         this.colaboradorService = colaboradorService;
+        this.colaboradorRepository = colaboradorRepository;
     }
 
     @PostMapping
-    public ResponseEntity<Colaborador> salvar(@RequestBody Colaborador colaborador) {
-        Colaborador colaboradorSalvo = colaboradorService.salvarColaborador(colaborador);
-        return ResponseEntity.status(HttpStatus.CREATED).body(colaboradorSalvo);
+    public ResponseEntity<Colaborador> criarColaborador(@RequestBody Colaborador colaborador) {
+        Colaborador colaboradorSalva = colaboradorRepository.save(colaborador);
+        return ResponseEntity.ok(colaboradorSalva);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Colaborador> obterColaborador(@PathVariable("id") String id) {
-        Optional<Colaborador> colaborador = colaboradorService.buscarColaboradorPorId(id);
-        return colaborador.map(ResponseEntity::ok)
-                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    public ResponseEntity<?> buscarColaboradorPorId(@PathVariable String id) {
+        return colaboradorService.buscarColaboradorPorId(id);
     }
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<String> deletar(@PathVariable String id) {
-        try {
-            colaboradorService.deletarColaborador(id);
-            return ResponseEntity.ok("Colaborador deletado com sucesso");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Colaborador não encontrado");
-        }
+    @PutMapping("/{id}")
+    public ResponseEntity<?> atualizarColaborador(@PathVariable String id, @RequestBody Colaborador colaboradorAtualizada) {
+        return colaboradorService.atualizarColaborador(id, colaboradorAtualizada);
     }
 
-    @PutMapping("{id}")
-    public ResponseEntity<Colaborador> atualizarColaborador(@PathVariable("id") String id, @RequestBody Colaborador colaborador) {
-        Colaborador colaboradorAtualizado = colaboradorService.atualizarColaborador(id, colaborador);
-        return ResponseEntity.ok(colaboradorAtualizado);
-    }
-
+    @Autowired
+    private ColaboradorRepository colaboradorRepository;
     @GetMapping
-    public ResponseEntity<List<Colaborador>> buscar(@RequestParam("nome") String nome) {
-        List<Colaborador> colaborador = colaboradorService.buscarColaboradorPorNome(nome);
-        return ResponseEntity.ok(colaborador);
+    public List<Colaborador> buscarColaboradorPeloNome(String nome) {
+        String nomeSemAcento = StringUtils.removerAcentos(nome).toLowerCase();
+
+        List<Colaborador> resultado = colaboradorRepository.findAll().stream()
+                .filter(colaborador -> {
+                    String nomeColaboradorSemAcento = StringUtils.removerAcentos(colaborador.getNome()).toLowerCase();
+                    return nomeColaboradorSemAcento.contains(nomeSemAcento);
+                })
+                .collect(Collectors.toList());
+
+        System.out.println("Resultado da busca: " + resultado);
+        return resultado;
     }
-}*/
+
+    @Autowired
+    private ColaboradorService colaboradorService;
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletarColaborador(@PathVariable String id) { // Use Long diretamente
+        return colaboradorService.deletarColaborador(id); // Retorne diretamente o resultado do serviço
+    }
+}

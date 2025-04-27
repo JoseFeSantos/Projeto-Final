@@ -29,7 +29,6 @@ public class Orcamento {
     @Column(name = "valortotal")
     private double valorTotal;
 
-
     @Enumerated(EnumType.STRING)
     @Column(name = "meiodepagamento")
     private MeioDePagamento meioDePagamento;
@@ -40,9 +39,9 @@ public class Orcamento {
     @Column(name = "observacao", length = 2000)
     private String observacao;
 
-    @ManyToOne
-    @JoinColumn(name = "pessoa_id")
-    private Pessoa pessoa;
+//    @ManyToOne
+//    @JoinColumn(name = "pessoa_id")
+//    private Pessoa pessoa;
 
     @Enumerated(EnumType.STRING)
     @JoinColumn(name = "statusdepagamento")
@@ -112,13 +111,13 @@ public class Orcamento {
         this.observacao = observacao;
     }
 
-    public Pessoa getPessoa() {
-        return pessoa;
-    }
-
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
-    }
+//    public Pessoa getPessoa() {
+//        return pessoa;
+//    }
+//
+//    public void setPessoa(Pessoa pessoa) {
+//        this.pessoa = pessoa;
+//    }
 
     public StatusDePagamento getStatusDePagamento() {
         return statusDePagamento;
@@ -139,7 +138,7 @@ public class Orcamento {
                 ", meioDePagamento=" + meioDePagamento +
                 ", dataLimite=" + dataLimite +
                 ", observacao='" + observacao + '\'' +
-                ", pessoa=" + pessoa +
+//                ", pessoa=" + pessoa +
                 ", statusDePagamento=" + statusDePagamento +
                 '}';
     }

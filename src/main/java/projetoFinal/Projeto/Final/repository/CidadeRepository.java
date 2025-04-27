@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import projetoFinal.Projeto.Final.model.Cidade;
-import projetoFinal.Projeto.Final.model.Pessoa;
 
 import java.util.List;
 

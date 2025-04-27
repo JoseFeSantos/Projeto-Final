@@ -56,154 +56,98 @@ INSERT INTO cidade (nome, estado_id) VALUES ('São Paulo', 25);
 INSERT INTO cidade (nome, estado_id) VALUES ('Aracaju', 26);
 INSERT INTO cidade (nome, estado_id) VALUES ('Palmas', 27);
 
--- Inserindo Pessoas (Clientes e Colaboradores) para cada capital
--- Rio Branco (AC)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('João Silva', 'M', '68999999999', 12345678901, '1990-01-01', 'Centro', 'Rua A', '69900000', 1, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Maria Oliveira', 'F', '68988888888', 98765432101, '1985-05-15', 'Base', 'Rua B', '69900001', 1, 'ATIVO', 'COLABORADOR');
+--Dados Bancarios
+INSERT INTO banco (codigobanco, nomebanco) VALUES (1, 'Banco do Brasil');
+INSERT INTO banco (codigobanco, nomebanco) VALUES (33, 'Banco Santander (Brasil)');
+INSERT INTO banco (codigobanco, nomebanco) VALUES (104, 'Caixa Econômica Federal');
+INSERT INTO banco (codigobanco, nomebanco) VALUES (237, 'Banco Bradesco');
+INSERT INTO banco (codigobanco, nomebanco) VALUES (341, 'Itaú Unibanco');
+INSERT INTO banco (codigobanco, nomebanco) VALUES (260, 'Nubank');
+INSERT INTO banco (codigobanco, nomebanco) VALUES (77, 'Banco Inter');
+INSERT INTO banco (codigobanco, nomebanco) VALUES (655, 'Banco Votorantim');
+INSERT INTO banco (codigobanco, nomebanco) VALUES (422, 'Banco Safra');
+INSERT INTO banco (codigobanco, nomebanco) VALUES (208, 'BTG Pactual');
 
--- Maceió (AL)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Carlos Souza', 'M', '82999999999', 23456789012, '1988-07-20', 'Ponta Verde', 'Rua C', '57000000', 2, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Ana Costa', 'F', '82888888888', 87654321098, '1992-11-30', 'Jatiúca', 'Rua D', '57000001', 2, 'ATIVO', 'COLABORADOR');
+--CLIENTES
+-- Cliente 1 (Masculino, São Paulo/SP)
+INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('João Carlos Silva', 'MASCULINO', '123.456.789-09', 'joao.silva@email.com', '(11) 98765-4321', '1985-05-15', '01310-100', 'Avenida Paulista', 'Bela Vista', 25, 25);
 
--- Macapá (AP)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Pedro Alves', 'M', '96999999999', 34567890123, '1980-03-25', 'Central', 'Rua E', '68900000', 3, 'ATIVO', 'CLIENTE');
-VALUES ('Fernanda Lima', 'F', '96888888888', 76543210987, '1995-09-12', 'Trem', 'Rua F', '68900001', 3, 'ATIVO', 'COLABORADOR');
-VALUES ('Lucas Mendes', 'M', '92999999999', 45678901234, '1991-04-18', 'Centro', 'Rua G', '69000000', 4, 'ATIVO', 'CLIENTE');
-VALUES ('Juliana Rocha', 'F', '92888888888', 65432109876, '1987-12-05', 'Adrianópolis', 'Rua H', '69000001', 4, 'ATIVO', 'COLABORADOR');
+-- Cliente 2 (Feminino, Rio de Janeiro/RJ)
+INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Maria Oliveira Santos', 'FEMININO', '987.654.321-00', 'maria.santos@email.com', '(21) 99876-5432', '1990-08-22', '20040-010', 'Rua do Ouvidor', 'Centro', 19, 19);
 
--- Salvador (BA)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Rafael Santos', 'M', '71999999999', 56789012345, '1983-08-22', 'Barra', 'Rua I', '40000000', 5, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Patrícia Almeida', 'F', '71888888888', 54321098765, '1990-02-14', 'Pituba', 'Rua J', '40000001', 5, 'ATIVO', 'COLABORADOR');
+-- Cliente 3 (Masculino, Minas Gerais/MG)
+INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Carlos Eduardo Pereira', 'MASCULINO', '456.789.123-45', 'carlos.pereira@email.com', '(31) 98765-1234', '1978-11-30', '30120-010', 'Avenida Afonso Pena', 'Funcionários', 13, 13);
 
--- Fortaleza (CE)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Marcos Oliveira', 'M', '85999999999', 67890123456, '1986-06-30', 'Meireles', 'Rua K', '60000000', 6, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Camila Fernandes', 'F', '85888888888', 43210987654, '1993-10-25', 'Aldeota', 'Rua L', '60000001', 6, 'ATIVO', 'COLABORADOR');
+-- Cliente 4 (Feminino, Bahia/BA)
+INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Ana Claudia Souza', 'FEMININO', '789.123.456-78', 'ana.souza@email.com', '(71) 98765-6789', '1995-03-10', '40010-010', 'Avenida Sete de Setembro', 'Comércio', 5, 5);
 
--- Brasília (DF)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Gustavo Lima', 'M', '61999999999', 78901234567, '1984-05-12', 'Asa Sul', 'Rua M', '70000000', 7, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Isabela Martins', 'F', '61888888888', 32109876543, '1991-07-08', 'Asa Norte', 'Rua N', '70000001', 7, 'ATIVO', 'COLABORADOR');
+-- Cliente 5 (Feminino, Paraná/PR)
+INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Patricia Lima Costa', 'FEMININO', '321.654.987-32', 'patricia.costa@email.com', '(41) 98765-9876', '1988-07-18', '80010-010', 'Rua XV de Novembro', 'Centro', 16, 16);
 
--- Vitória (ES)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Roberto Alves', 'M', '27999999999', 89012345678, '1982-09-17', 'Praia do Canto', 'Rua O', '29000000', 8, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Tatiane Souza', 'F', '27888888888', 21098765432, '1994-03-03', 'Jardim da Penha', 'Rua P', '29000001', 8, 'ATIVO', 'COLABORADOR');
+-- Cliente 6 (Masculino, Pernambuco/PE)
+INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Ricardo Almeida Santos', 'MASCULINO', '654.321.987-65', 'ricardo.santos@email.com', '(81) 98765-3456', '1992-09-25', '50010-010', 'Avenida Conde da Boa Vista', 'São José', 17, 17);
 
--- Goiânia (GO)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Daniel Costa', 'M', '62999999999', 90123456789, '1989-11-20', 'Setor Bueno', 'Rua Q', '74000000', 9, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Larissa Mendes', 'F', '62888888888', 10987654321, '1996-04-15', 'Setor Marista', 'Rua R', '74000001', 9, 'ATIVO', 'COLABORADOR');
+-- Cliente 7 (Feminino, Rio Grande do Sul/RS)
+INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Fernanda Rocha Oliveira', 'FEMININO', '147.258.369-14', 'fernanda.oliveira@email.com', '(51) 98765-7412', '1980-12-05', '90010-010', 'Avenida Borges de Medeiros', 'Centro Histórico', 21, 21);
 
--- São Luís (MA)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Felipe Rocha', 'M', '98999999999', 01234567890, '1981-12-10', 'Renascença', 'Rua S', '65000000', 10, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Vanessa Lima', 'F', '98888888888', 09876543210, '1997-08-22', 'São Francisco', 'Rua T', '65000001', 10, 'ATIVO', 'COLABORADOR');
+-- Cliente 8 (Masculino, Ceará/CE)
+INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Lucas Mendes Costa', 'MASCULINO', '258.369.147-25', 'lucas.costa@email.com', '(85) 98765-8523', '1998-04-12', '60010-010', 'Avenida Dom Manuel', 'Centro', 6, 6);
 
--- Cuiabá (MT)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Bruno Oliveira', 'M', '65999999999', 12345098765, '1987-02-28', 'Jardim Cuiabá', 'Rua U', '78000000', 11, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Amanda Santos', 'F', '65888888888', 98765012345, '1993-06-14', 'Jardim dos Ipês', 'Rua V', '78000001', 11, 'ATIVO', 'COLABORADOR');
+-- Cliente 9 (Feminino, Santa Catarina/SC)
+INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Amanda Torres Silva', 'FEMININO', '369.147.258-36', 'amanda.silva@email.com', '(48) 98765-9632', '1987-06-20', '88010-010', 'Rua Felipe Schmidt', 'Centro', 24, 24);
 
--- Campo Grande (MS)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Ricardo Almeida', 'M', '67999999999', 23456109876, '1985-01-05', 'Centro', 'Rua W', '79000000', 12, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Carolina Fernandes', 'F', '67888888888', 87654123456, '1990-09-30', 'Jardim dos Estados', 'Rua X', '79000001', 12, 'ATIVO', 'COLABORADOR');
+-- Cliente 10 (Masculino, Goiás/GO)
+INSERT INTO cliente (nome, sexo, cpf, email, telefone, datadenascimento, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Roberto Nunes Alves', 'MASCULINO', '951.753.852-96', 'roberto.alves@email.com', '(62) 98765-1597', '1975-01-15', '74010-010', 'Avenida Goiás', 'Setor Central', 9, 9);
 
--- Belo Horizonte (MG)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Eduardo Lima', 'M', '31999999999', 34567210987, '1983-07-12', 'Savassi', 'Rua Y', '30000000', 13, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Bianca Rocha', 'F', '31888888888', 76543219876, '1995-03-25', 'Lourdes', 'Rua Z', '30000001', 13, 'ATIVO', 'COLABORADOR');
 
--- Belém (PA)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Marcelo Alves', 'M', '91999999999', 45678321098, '1980-04-18', 'Nazaré', 'Rua AA', '66000000', 14, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Fernanda Costa', 'F', '91888888888', 65432198765, '1992-12-08', 'Umarizal', 'Rua AB', '66000001', 14, 'ATIVO', 'COLABORADOR');
+--COLABORADORES
+-- Colaborador 1 (São Paulo/SP - Itaú)
+-- Colaborador 1 (São Paulo/SP - Itaú)
+INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Lucas Oliveira', 12345678901, 'lucas.oliveira@empresa.com', '(11) 98765-1234', '1988-07-15', 341, 1234, 567890, 'CORRENTE', '01310-000', 'Avenida Paulista', 'Bela Vista', 25, 25);
 
--- João Pessoa (PB)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Thiago Mendes', 'M', '83999999999', 56789432109, '1988-10-22', 'Manaíra', 'Rua AC', '58000000', 15, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Gabriela Oliveira', 'F', '83888888888', 54321987654, '1994-05-17', 'Tambaú', 'Rua AD', '58000001', 15, 'ATIVO', 'COLABORADOR');
+-- Colaborador 2 (Rio de Janeiro/RJ - Bradesco)
+INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Fernanda Santos', 98765432109, 'fernanda.santos@empresa.com', '(21) 99876-5432', '1992-05-22', 237, 4567, 123456, 'POUPANCA', '20040-010', 'Rua do Ouvidor', 'Centro', 19, 19);
 
--- Curitiba (PR)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Leonardo Souza', 'M', '41999999999', 67890543210, '1986-03-14', 'Batel', 'Rua AE', '80000000', 16, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Mariana Almeida', 'F', '41888888888', 43210987654, '1991-08-29', 'Centro Cívico', 'Rua AF', '80000001', 16, 'ATIVO', 'COLABORADOR');
+-- Colaborador 3 (Minas Gerais/MG - Banco do Brasil)
+INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Ricardo Pereira', 45678912345, 'ricardo.pereira@empresa.com', '(31) 98765-6789', '1985-11-30', 1, 7890, 345678, 'CORRENTE', '30120-010', 'Avenida Afonso Pena', 'Funcionários', 13, 13);
 
--- Recife (PE)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Rodrigo Lima', 'M', '81999999999', 78901654321, '1984-09-03', 'Boa Viagem', 'Rua AG', '50000000', 17, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Luciana Fernandes', 'F', '81888888888', 32109876543, '1996-02-12', 'Pina', 'Rua AH', '50000001', 17, 'ATIVO', 'COLABORADOR');
+-- Colaborador 4 (Bahia/BA - Nubank)
+INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Amanda Costa', 78912345678, 'amanda.costa@empresa.com', '(71) 98765-9012', '1990-03-10', 260, 1234, 789012, 'CORRENTE', '40010-010', 'Avenida Sete de Setembro', 'Comércio', 5, 5);
 
--- Teresina (PI)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Paulo Santos', 'M', '86999999999', 89012765432, '1982-11-25', 'Centro', 'Rua AI', '64000000', 18, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Aline Rocha', 'F', '86888888888', 21098765432, '1993-07-18', 'Jóquei', 'Rua AJ', '64000001', 18, 'ATIVO', 'COLABORADOR');
+-- Colaborador 5 (Paraná/PR - Santander)
+INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Roberto Almeida', 32165498732, 'roberto.almeida@empresa.com', '(41) 98765-3456', '1987-09-18', 33, 5678, 901234, 'SALARIO', '80010-010', 'Rua XV de Novembro', 'Centro', 16, 16);
 
--- Rio de Janeiro (RJ)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Vinicius Alves', 'M', '21999999999', 90123876543, '1989-06-07', 'Copacabana', 'Rua AK', '22000000', 19, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Patrícia Lima', 'F', '21888888888', 10987654321, '1995-01-22', 'Ipanema', 'Rua AL', '22000001', 19, 'ATIVO', 'COLABORADOR');
+-- Colaborador 6 (Pernambuco/PE - Caixa Econômica)
+INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Patricia Souza', 65432198765, 'patricia.souza@empresa.com', '(81) 98765-7890', '1995-12-25', 104, 9012, 567890, 'CORRENTE', '50010-010', 'Avenida Conde da Boa Vista', 'São José', 17, 17);
 
--- Natal (RN)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Fábio Costa', 'M', '84999999999', 01234987654, '1981-04-30', 'Ponta Negra', 'Rua AM', '59000000', 20, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Fábio Costa', 'M', '77944555425', 14515457872, '1981-04-30', 'Ponta Negra', 'Rua AM', '59000000', 20, 'ATIVO', 'CLIENTE');
+-- Colaborador 7 (Rio Grande do Sul/RS - Banco Inter)
+INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Carlos Mendes', 14725836914, 'carlos.mendes@empresa.com', '(51) 98765-2345', '1980-02-05', 77, 3456, 123456, 'POUPANCA', '90010-010', 'Avenida Borges de Medeiros', 'Centro Histórico', 21, 21);
 
--- Porto Velho (RO)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Marcos Rocha', 'M', '69999999999', 12345678901, '1985-07-18', 'Centro', 'Rua AP', '76800000', 22, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Fernanda Alves', 'F', '69888888888', 98765432101, '1990-11-25', 'Nova Porto Velho', 'Rua AQ', '76800001', 22, 'ATIVO', 'COLABORADOR');
+-- Colaborador 8 (Ceará/CE - Banco Safra)
+INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Juliana Rocha', 25836914725, 'juliana.rocha@empresa.com', '(85) 98765-6789', '1998-06-12', 422, 7890, 345678, 'CORRENTE', '60010-010', 'Avenida Dom Manuel', 'Centro', 6, 6);
 
--- Boa Vista (RR)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Ricardo Lima', 'M', '95999999999', 23456789012, '1988-09-30', 'Centro', 'Rua AR', '69300000', 23, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Camila Nascimento', 'F', '95888888888', 87654321098, '1993-04-15', 'Mecejana', 'Rua AS', '69300001', 23, 'ATIVO', 'COLABORADOR');
+-- Colaborador 9 (Santa Catarina/SC - BTG Pactual)
+INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Gabriel Torres', 36914725836, 'gabriel.torres@empresa.com', '(48) 98765-0123', '1987-04-20', 208, 1234, 789012, 'SALARIO', '88010-010', 'Rua Felipe Schmidt', 'Centro', 24, 24);
 
--- Florianópolis (SC)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Gustavo Rocha', 'M', '48999999999', 34567890123, '1982-12-20', 'Centro', 'Rua AT', '88000000', 24, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Isabela Almeida', 'F', '48888888888', 76543210987, '1995-08-10', 'Trindade', 'Rua AU', '88000001', 24, 'ATIVO', 'COLABORADOR');
-
--- Aracaju (SE)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Felipe Souza', 'M', '79999999999', 45678901234, '1980-05-25', 'Centro', 'Rua AV', '49000000', 25, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Vanessa Costa', 'F', '79888888888', 65432109876, '1992-10-12', 'Jardins', 'Rua AW', '49000001', 25, 'ATIVO', 'COLABORADOR');
-
--- Palmas (TO)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Bruno Mendes', 'M', '63999999999', 56789012345, '1987-02-18', 'Centro', 'Rua AX', '77000000', 26, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Amanda Rocha', 'F', '63888888888', 43210987654, '1994-07-22', 'Plano Diretor Norte', 'Rua AY', '77000001', 26, 'ATIVO', 'COLABORADOR');
-
--- São Paulo (SP)
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Leonardo Alves', 'M', '11999999999', 67890123456, '1986-03-14', 'Centro', 'Rua AZ', '01000000', 27, 'ATIVO', 'CLIENTE');
-INSERT INTO pessoa (nome, sexo, telefone, cpf, dataDeNascimento, bairro, logradouro, cep, cidade_id, status, tipo)
-VALUES ('Mariana Lima', 'F', '11888888888', 32109876543, '1991-08-29', 'Moema', 'Rua BA', '01000001', 27, 'ATIVO', 'COLABORADOR');
+-- Colaborador 10 (Goiás/GO - Votorantim)
+INSERT INTO colaborador (nome, cpf, email, telefone, datadenascimento, dadosbancarios_id, agencia, conta, tipoconta, cep, logradouro, bairro, cidade_id, estado_id)
+VALUES ('Ana Nunes', 95175385296, 'ana.nunes@empresa.com', '(62) 98765-4567', '1975-08-15', 655, 5678, 901234, 'CORRENTE', '74010-010', 'Avenida Goiás', 'Setor Central', 9, 9);

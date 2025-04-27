@@ -1,57 +1,63 @@
-/*
 package projetoFinal.Projeto.Final.controller;
 
-import org.springframework.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import projetoFinal.Projeto.Final.model.Cliente;
+import projetoFinal.Projeto.Final.repository.ClienteRepository;
 import projetoFinal.Projeto.Final.service.ClienteService;
+import projetoFinal.Projeto.Final.utils.StringUtils;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("cliente")
 public class ClienteController {
 
-    private final ClienteService clienteService;
-
-    public ClienteController(ClienteService clienteService) {
+    public ClienteController(ClienteService clienteService, ClienteRepository clienteRepository) {
         this.clienteService = clienteService;
+        this.clienteRepository = clienteRepository;
     }
 
     @PostMapping
-    public ResponseEntity<Cliente> salvarCliente(@RequestBody Cliente cliente) {
-        Cliente clienteSalvo = clienteService.salvarCliente(cliente);
-        return ResponseEntity.status(HttpStatus.CREATED).body(clienteSalvo);
+    public ResponseEntity<Cliente> criarCliente(@RequestBody Cliente cliente) {
+        Cliente clienteSalva = clienteRepository.save(cliente);
+        return ResponseEntity.ok(clienteSalva);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> obterCliente(@PathVariable("id") String id) {
-        Optional<Cliente> cliente = clienteService.buscarClientePorId(id);
-        return cliente.map(ResponseEntity::ok)
-                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    public ResponseEntity<?> buscarClientePorId(@PathVariable String id) {
+        return clienteService.buscarClientePorId(id);
     }
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<String> deletar(@PathVariable String id) {
-        try {
-            clienteService.deletarCliente(id);
-            return ResponseEntity.ok("Cliente deletado com sucesso");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não encontrado");
-        }
+    @PutMapping("/{id}")
+    public ResponseEntity<?> atualizarCliente(@PathVariable String id, @RequestBody Cliente clienteAtualizada) {
+        return clienteService.atualizarCliente(id, clienteAtualizada);
     }
 
-    @PutMapping("{id}")
-    public ResponseEntity<Cliente> atualizar(@PathVariable("id") String id, @RequestBody Cliente cliente) {
-        Cliente clienteAtualizado = clienteService.atualizarCliente(id, cliente);
-        return ResponseEntity.ok(clienteAtualizado);
-    }
-
+    @Autowired
+    private ClienteRepository clienteRepository;
     @GetMapping
-    public ResponseEntity<List<Cliente>> buscar(@RequestParam("nome") String nome) {
-        List<Cliente> clientes = clienteService.buscarClientesPorNome(nome);
-        return ResponseEntity.ok(clientes);
+    public List<Cliente> buscarClientePeloNome(String nome) {
+        String nomeSemAcento = StringUtils.removerAcentos(nome).toLowerCase();
+
+        List<Cliente> resultado = clienteRepository.findAll().stream()
+                .filter(cliente -> {
+                    String nomeClienteSemAcento = StringUtils.removerAcentos(cliente.getNome()).toLowerCase();
+                    return nomeClienteSemAcento.contains(nomeSemAcento);
+                })
+                .collect(Collectors.toList());
+
+        System.out.println("Resultado da busca: " + resultado);
+        return resultado;
     }
-}*/
+
+    @Autowired
+    private ClienteService clienteService;
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletarCliente(@PathVariable String id) { // Use Long diretamente
+        return clienteService.deletarCliente(id); // Retorne diretamente o resultado do serviço
+    }
+}

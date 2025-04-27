@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import projetoFinal.Projeto.Final.model.Cidade;
 import projetoFinal.Projeto.Final.repository.CidadeRepository;
-import projetoFinal.Projeto.Final.repository.PessoaRepository;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,8 +14,6 @@ import java.util.Map;
 @Service
 public class CidadeService {
 
-    @Autowired
-    private PessoaRepository pessoaRepository;
     @Autowired
     private CidadeRepository cidadeRepository;
 
@@ -69,12 +66,6 @@ public class CidadeService {
             // Verifica se a cidade existe
             Cidade cidade = cidadeRepository.findById(id) // Use String como tipo do ID
                     .orElseThrow(() -> new EntityNotFoundException("Cidade não encontrada."));
-
-            // Verifica se há pessoas vinculadas à cidade
-            if (pessoaRepository.existsByCidadeId(Integer.valueOf(id))) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                        .body("Não é possível excluir a cidade, pois há pessoas vinculadas.");
-            }
 
             // Se não houver dependências, exclui a cidade
             cidadeRepository.delete(cidade);
