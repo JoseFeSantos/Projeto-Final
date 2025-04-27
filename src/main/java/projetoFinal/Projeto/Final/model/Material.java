@@ -13,6 +13,9 @@ public class Material {
     @Column(name = "nome")
     private String nome;
 
+    public Material() {
+    }
+
     public Long getId() {
         return id;
     }

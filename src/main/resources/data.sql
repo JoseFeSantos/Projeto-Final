@@ -266,3 +266,19 @@ INSERT INTO servico (nome, descricao, valor, categoriaservico_id) VALUES (
     'Entrega Expressa',
     'Entrega rápida na mesma cidade',
     15.00, 10);
+
+-- Materiais Automotivos
+INSERT INTO material (nome) VALUES ('Óleo Lubrificante 5W30 Sintético 1L');
+INSERT INTO material (nome) VALUES ('Filtro de Óleo Automotivo');
+INSERT INTO material (nome) VALUES ('Pastilha de Freio Dianteira');
+
+-- Materiais de Limpeza Doméstica
+INSERT INTO material (nome) VALUES ('Desinfetante Bactericida 2L');
+INSERT INTO material (nome) VALUES ('Detergente Líquido Neutro 500ml');
+INSERT INTO material (nome) VALUES ('Esponja Multiuso com Lado Abrasivo');
+
+-- Materiais de TI
+INSERT INTO material (nome) VALUES ('SSD Kingston 480GB SATA III');
+INSERT INTO material (nome) VALUES ('Memória RAM DDR4 8GB 2666MHz');
+INSERT INTO material (nome) VALUES ('Cabo de Rede CAT6 3m');
+INSERT INTO material (nome) VALUES ('Teclado Mecânico RGB ABNT2');

@@ -13,4 +13,5 @@ public interface CidadeRepository extends JpaRepository<Cidade, String> {
 
     @Query("SELECT p FROM Cidade p WHERE LOWER(FUNCTION('unaccent', p.nome)) LIKE LOWER(FUNCTION('unaccent', CONCAT('%', :nome, '%')))")
     List<Cidade> buscarPorNome(@Param("nome") String nome);
+
 }
