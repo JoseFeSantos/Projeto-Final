@@ -1,8 +1,61 @@
-C:\Projetos\Projeto Integrador\Projeto_Integrador\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Cidade.java
-C:\Projetos\Projeto Integrador\Projeto_Integrador\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Cliente.java
-C:\Projetos\Projeto Integrador\Projeto_Integrador\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Colaborador.java
-C:\Projetos\Projeto Integrador\Projeto_Integrador\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Estado.java
-C:\Projetos\Projeto Integrador\Projeto_Integrador\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Status.java
-C:\Projetos\Projeto Integrador\Projeto_Integrador\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\TipoPessoa.java
-C:\Projetos\Projeto Integrador\Projeto_Integrador\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Usuario.java
-C:\Projetos\Projeto Integrador\Projeto_Integrador\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\ProjetoFinalApplication.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\controller\AuthController.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\controller\CategoriaServicoController.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\controller\CidadeController.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\controller\ClienteController.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\controller\ColaboradorController.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\controller\EstadoController.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\controller\MaterialController.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\controller\ServicoController.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\controller\UserController.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\dtos\CidadeDTO.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\dtos\LoginRequestDTO.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\dtos\RegisterRequestDTO.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\dtos\ResponseDTO.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\enus\MeioDePagamento.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\enus\Sexo.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\enus\Status.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\enus\StatusDePagamento.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\enus\StatusOrcamento.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\enus\TipoConta.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\exceptions\AuthenticationException.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\exceptions\UserAlreadyExistsException.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\exceptions\UserNotFoundException.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\infra\cors\CorsConfig.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\infra\exceptions\ErrorResponseMessage.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\infra\exceptions\GlobalExceptionHandler.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\infra\security\CustomUserDetailsService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\infra\security\SecurityConfig.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\infra\security\SecurityFilter.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\infra\security\TokenService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\CategoriaServico.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Cidade.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Cliente.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Colaborador.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\DadosBancarios.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Estado.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\ItemOrcamento.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Material.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Orcamento.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\Servico.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\model\User.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\ProjetoFinalApplication.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\repository\CategoriaServicoRepository.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\repository\CidadeRepository.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\repository\ClienteRepository.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\repository\ColaboradorRepository.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\repository\EstadoRepository.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\repository\MaterialRepository.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\repository\OrcamentoRepository.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\repository\ServicoRepository.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\repository\UserRepository.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\service\AuthService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\service\CategoriaServicoService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\service\CidadeService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\service\ClienteService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\service\ColaboradorService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\service\EstadoService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\service\MaterialService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\service\OrcamentoService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\service\ServicoService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\service\UserService.java
+C:\Users\jose\Documents\Emprenda+\Projeto-Final\src\main\java\projetoFinal\Projeto\Final\utils\StringUtils.java
