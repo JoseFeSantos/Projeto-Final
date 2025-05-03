@@ -43,6 +43,15 @@ public class ClienteService {
                     .orElseThrow(() -> new EntityNotFoundException("Cliente não encontrada."));
 
             clienteExistente.setNome(clienteAtualizado.getNome());
+            clienteExistente.setSexo(clienteAtualizado.getSexo());
+            clienteExistente.setCpf(clienteAtualizado.getCpf());
+            clienteExistente.setEmail(clienteAtualizado.getEmail());
+            clienteExistente.setTelefone(clienteAtualizado.getTelefone());
+            clienteExistente.setDataDeNascimento(clienteAtualizado.getDataDeNascimento());
+            clienteExistente.setCep(clienteAtualizado.getCep());
+            clienteExistente.setLogradouro(clienteAtualizado.getLogradouro());
+            clienteExistente.setBairro(clienteAtualizado.getBairro());
+            clienteExistente.setCidade(clienteAtualizado.getCidade());
             Cliente clienteSalvo = clienteRepository.save(clienteExistente);
 
             Map<String, Object> resposta = new HashMap<>();

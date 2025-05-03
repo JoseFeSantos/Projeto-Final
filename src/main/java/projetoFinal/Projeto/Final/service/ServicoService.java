@@ -44,6 +44,7 @@ public class ServicoService {
 
             servicoExistente.setNome(servicoAtualizada.getNome());
             servicoExistente.setDescricao(servicoAtualizada.getDescricao());
+            servicoExistente.setValor(servicoAtualizada.getValor());
             Servico servicoSalva = servicoRepository.save(servicoExistente);
 
             Map<String, Object> resposta = new HashMap<>();

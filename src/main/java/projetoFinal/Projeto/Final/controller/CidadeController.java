@@ -15,8 +15,8 @@ import java.util.stream.Collectors;
 @RequestMapping("cidade")
 public class CidadeController {
 
-    public CidadeController(CidadeService cidadeService, CidadeService cidadeService1, CidadeRepository cidadeRepository) {
-        this.cidadeService = cidadeService1;
+    public CidadeController(CidadeService cidadeService, CidadeRepository cidadeRepository) {
+        this.cidadeService = cidadeService;
         this.cidadeRepository = cidadeRepository;
     }
 

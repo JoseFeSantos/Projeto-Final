@@ -40,7 +40,7 @@ public class Colaborador {
     @Column(name = "conta")
     private long conta;
 
-    @Column(name = "tipoconta")
+    @JoinColumn(name = "tipoconta")
     @Enumerated(EnumType.STRING)
     private TipoConta tipoConta;
 
@@ -56,10 +56,6 @@ public class Colaborador {
     @ManyToOne
     @JoinColumn(name = "cidade_id")
     private Cidade cidade;
-
-    @ManyToOne
-    @JoinColumn(name = "estado_id")
-    private Estado estado;
 
     public TipoConta getTipoConta() {
         return tipoConta;
@@ -173,11 +169,4 @@ public class Colaborador {
         this.cidade = cidade;
     }
 
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
 }

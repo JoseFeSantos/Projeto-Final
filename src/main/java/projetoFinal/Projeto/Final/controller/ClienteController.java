@@ -57,7 +57,7 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deletarCliente(@PathVariable String id) { // Use Long diretamente
-        return clienteService.deletarCliente(id); // Retorne diretamente o resultado do serviço
+    public ResponseEntity<String> deletarCliente(@PathVariable String id) {
+        return clienteService.deletarCliente(id);
     }
 }

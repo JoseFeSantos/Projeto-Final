@@ -43,6 +43,17 @@ public class ColaboradorService {
                     .orElseThrow(() -> new EntityNotFoundException("Colaborador não encontrada."));
 
             colaboradorExistente.setNome(colaboradorAtualizado.getNome());
+            colaboradorExistente.setCpf(colaboradorAtualizado.getCpf());
+            colaboradorExistente.setEmail(colaboradorAtualizado.getEmail());
+            colaboradorExistente.setTelefone(colaboradorAtualizado.getTelefone());
+            colaboradorExistente.setDataDeNascimento(colaboradorAtualizado.getDataDeNascimento());
+            colaboradorExistente.setConta(colaboradorAtualizado.getConta());
+            colaboradorExistente.setAgencia(colaboradorAtualizado.getAgencia());
+            colaboradorExistente.setCep(colaboradorAtualizado.getCep());
+            colaboradorExistente.setTipoConta(colaboradorAtualizado.getTipoConta());
+            colaboradorExistente.setLogradouro(colaboradorAtualizado.getLogradouro());
+            colaboradorExistente.setBairro(colaboradorAtualizado.getBairro());
+            colaboradorExistente.setCidade(colaboradorAtualizado.getCidade());
             Colaborador colaboradorSalvo = colaboradorRepository.save(colaboradorExistente);
 
             Map<String, Object> resposta = new HashMap<>();

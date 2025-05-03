@@ -1,5 +1,6 @@
 package projetoFinal.Projeto.Final.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import projetoFinal.Projeto.Final.enus.Sexo;
 
@@ -30,8 +31,9 @@ public class Cliente {
     @Column(name = "telefone")
     private String telefone;
 
-    @Column(name = "datadenascimento")
-    private LocalDate dataDeNascimento; // Removido @OneToOne errado
+    @JsonProperty("datadenascimento")
+    private LocalDate dataDeNascimento;
+
 
     @Column(name = "cep")
     private String cep;

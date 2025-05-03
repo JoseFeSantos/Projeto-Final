@@ -9,22 +9,38 @@ import lombok.Data;
 public class DadosBancarios {
 
     @Id
-    @Column(name = "codigobanco", nullable = false, unique = true)
-    private Long codigoBanco;
+    @Column(name = "id", nullable = false, unique = true)
+    private Long id;
 
-    @Column(name = "nomebanco", nullable = false, length = 100)
+    @Column(name = "nome", nullable = false, length = 100)
     private String nome;
 
     public DadosBancarios() {
     }
 
-    public DadosBancarios(Long codigoBanco, String nome) {
-        this.codigoBanco = codigoBanco;
+    public DadosBancarios(Long id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
     @Override
     public String toString() {
-        return codigoBanco + " - " + nome;
+        return id + " - " + nome;
     }
 }

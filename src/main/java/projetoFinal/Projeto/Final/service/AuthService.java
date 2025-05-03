@@ -69,4 +69,5 @@ public class AuthService {
 
         return ResponseEntity.badRequest().body("Usuário já cadastrado");
     }
+
 }
