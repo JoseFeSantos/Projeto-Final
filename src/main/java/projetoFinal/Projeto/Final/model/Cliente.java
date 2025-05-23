@@ -1,10 +1,6 @@
 package projetoFinal.Projeto.Final.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import projetoFinal.Projeto.Final.enus.Sexo;
-
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "cliente")
@@ -13,52 +9,58 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "sexo", nullable = false)
-    private Sexo sexo;
-
-    @Column(name = "cpf", nullable = false, unique = true)
-    private String cpf; // Alterado para String (evita perda de zeros e problemas futuros)
-
-    @Column(name = "email", nullable = false, unique = true)
-    private String email;
+    @Column(name = "cpfcnpj", unique = true, length = 14) // Tipo de pessoa PF-(Pessoa Fisíca) / PJ-(Pessoa Jurídica)
+    private String cpf_cnpj;
 
     @Column(name = "telefone")
     private String telefone;
 
-    @JsonProperty("datadenascimento")
-    private LocalDate dataDeNascimento;
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
 
+    @Column(name = "datadenascimento")
+    private String dataDeNascimento;
 
-    @Column(name = "cep")
-    private String cep;
+//    @ManyToOne
+//    @JoinColumn(name = "endereco_id", nullable = false)
+//    private Endereco endereco;
 
-    @Column(name = "logradouro")
-    private String logradouro;
+    public Cliente() {}
 
-    @Column(name = "bairro")
-    private String bairro;
+    public Cliente(int id, User user, String nome, String cpf_cnpj, String telefone, String email, String dataDeNascimento) {
+        this.id = id;
+        this.user = user;
+        this.nome = nome;
+        this.cpf_cnpj = cpf_cnpj;
+        this.telefone = telefone;
+        this.email = email;
+        this.dataDeNascimento = dataDeNascimento;
+//        this.endereco = endereco;
+    }
 
-    @ManyToOne
-    @JoinColumn(name = "cidade_id")
-    private Cidade cidade;
-
-    @ManyToOne
-    @JoinColumn(name = "estado_id")
-    private Estado estado;
-
-    // Getters e Setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getNome() {
@@ -69,28 +71,12 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public Sexo getSexo() {
-        return sexo;
+    public String getCpf_cnpj() {
+        return cpf_cnpj;
     }
 
-    public void setSexo(Sexo sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCpf_cnpj(String cpf_cnpj) {
+        this.cpf_cnpj = cpf_cnpj;
     }
 
     public String getTelefone() {
@@ -101,51 +87,27 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public LocalDate getDataDeNascimento() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDataDeNascimento() {
         return dataDeNascimento;
     }
 
-    public void setDataDeNascimento(LocalDate dataDeNascimento) {
+    public void setDataDeNascimento(String dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
     }
 
-    public String getCep() {
-        return cep;
-    }
-
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
-
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public Cidade getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
+//    public Endereco getEndereco() {
+//        return endereco;
+//    }
+//
+//    public void setEndereco(Endereco endereco) {
+//        this.endereco = endereco;
+//    }
 }

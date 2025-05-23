@@ -14,18 +14,6 @@ public class Cidade {
     @Column(name = "nome")
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "estado_id")
-    private Estado estado;
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
-
     public Long getId() {
         return id;
     }
@@ -47,7 +35,6 @@ public class Cidade {
         return "Cidade{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", estado='" + estado + '\'' +
                 '}';
     }
 }

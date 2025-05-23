@@ -17,6 +17,14 @@ public class Estado {
     @Column(name = "sigla")
     private String sigla;
 
+    public Estado() {}
+
+    public Estado(long id, String nome, String sigla) {
+        this.id = id;
+        this.nome = nome;
+        this.sigla = sigla;
+    }
+
     public long getId() {
         return id;
     }

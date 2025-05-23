@@ -17,10 +17,10 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public ResponseEntity<?> buscarClientePorId(String id) {
+    public ResponseEntity<?> buscarClientePorId(int id) {
         try {
             // Busca o cliente pelo ID
-            Cliente cliente = clienteRepository.findById(id)
+            Cliente cliente = clienteRepository.findById(String.valueOf(id))
                     .orElseThrow(() -> new EntityNotFoundException("Cliente não encontrada."));
 
             // Retorna o cliente encontrado com status 200 (OK)
@@ -42,16 +42,12 @@ public class ClienteService {
             Cliente clienteExistente = clienteRepository.findById(id)
                     .orElseThrow(() -> new EntityNotFoundException("Cliente não encontrada."));
 
+            clienteExistente.setUser(clienteAtualizado.getUser());
             clienteExistente.setNome(clienteAtualizado.getNome());
-            clienteExistente.setSexo(clienteAtualizado.getSexo());
-            clienteExistente.setCpf(clienteAtualizado.getCpf());
-            clienteExistente.setEmail(clienteAtualizado.getEmail());
+            clienteExistente.setCpf_cnpj(clienteAtualizado.getCpf_cnpj());
             clienteExistente.setTelefone(clienteAtualizado.getTelefone());
-            clienteExistente.setDataDeNascimento(clienteAtualizado.getDataDeNascimento());
-            clienteExistente.setCep(clienteAtualizado.getCep());
-            clienteExistente.setLogradouro(clienteAtualizado.getLogradouro());
-            clienteExistente.setBairro(clienteAtualizado.getBairro());
-            clienteExistente.setCidade(clienteAtualizado.getCidade());
+            clienteExistente.setEmail(clienteAtualizado.getEmail());
+//            clienteExistente.setEndereco(clienteExistente.getEndereco());
             Cliente clienteSalvo = clienteRepository.save(clienteExistente);
 
             Map<String, Object> resposta = new HashMap<>();

@@ -3,8 +3,8 @@ package projetoFinal.Projeto.Final.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "categoriaservico")
-public class CategoriaServico {
+@Table(name = "categoriadespesa")
+public class CategoriaDespesa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

@@ -62,10 +62,6 @@ public class EstadoService {
         Estado estado = estadoRepository.findById(String.valueOf(id))
                 .orElseThrow(() -> new EntityNotFoundException("Estado não encontrado."));
 
-        // Verifica se há cidades vinculadas ao estado
-        if (cidadeRepository.existsByEstadoId(Math.toIntExact(id))) {
-            return "Não é possível excluir o estado, pois há cidades vinculadas.";
-        }
 
         // Se não houver dependências, exclui o estado
         estadoRepository.delete(estado);

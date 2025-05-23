@@ -22,12 +22,12 @@ public class ClienteController {
 
     @PostMapping
     public ResponseEntity<Cliente> criarCliente(@RequestBody Cliente cliente) {
-        Cliente clienteSalva = clienteRepository.save(cliente);
-        return ResponseEntity.ok(clienteSalva);
+        Cliente clienteSalvO = clienteRepository.save(cliente);
+        return ResponseEntity.ok(clienteSalvO);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> buscarClientePorId(@PathVariable String id) {
+    public ResponseEntity<?> buscarClientePorId(@PathVariable int id) {
         return clienteService.buscarClientePorId(id);
     }
 
@@ -57,7 +57,7 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deletarCliente(@PathVariable String id) {
-        return clienteService.deletarCliente(id);
+    public ResponseEntity<String> deletarCliente(@PathVariable int id) {
+        return clienteService.deletarCliente(String.valueOf(id));
     }
 }
